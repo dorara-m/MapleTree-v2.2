@@ -144,9 +144,11 @@ html
           .l-about__text-area__item#ReactText
             p render() {
             p.mL20 return (
-            ul.l-about__text-area__list.mL30
+            p.mL30 &lt;div&gt;
+            ul.l-about__text-area__list.mL50
               each val,key in profileItem
                 li.l-about__text-area__list__item &lt;#{key}&gt;#{val}&lt;/#{key}&gt;
+            p.mL30 &lt;/div&gt;
             p.mL20 )
             p }
 
