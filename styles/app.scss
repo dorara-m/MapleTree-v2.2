@@ -1,0 +1,27 @@
+// ==========================================================================
+// Foundations
+// ==========================================================================
+
+@import "foundations/_reset";
+@import "foundations/_base";
+
+// ==========================================================================
+// Layouts
+// ==========================================================================
+
+@import "layouts/_main";
+@import "layouts/_header";
+@import "layouts/_first-view";
+@import "layouts/_about";
+@import "layouts/_works";
+@import "layouts/_lab";
+@import "layouts/_contact";
+@import "layouts/_footer";
+
+// -----------------------------------------------------------------
+// utility
+// -----------------------------------------------------------------
+
+@import "utilitys/_margin.scss";
+// @import "pages/_works";
+// @import "pages/_contact";

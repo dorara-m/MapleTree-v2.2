@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/earlyaccess/mplus1p.css');
+
+* {
+	box-sizing: border-box;
+	letter-spacing: 1px;
+}
+
+body {
+	font-size: 16px;
+}
+
+// colors
+$mainColor: #f8b551;
+$textColor: #336699;
+
+// font
+$mainFont:'Oswald', sans-serif;
+$subFont: "Mplus 1p", serif;

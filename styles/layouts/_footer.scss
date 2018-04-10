@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody');
+.l-footer {
+	padding: 75px 0 85px;
+	text-align: center;
+	background-color: $mainColor;
+	font-family: $subFont;
+	color: #fff;
+	&__icon {
+		font-size: 36px;
+	}
+	&__text {
+		font-size: 61px;
+		margin-bottom: 19px;
+		font-family: 'Hi Melody', cursive;
+	}
+	&__copyrights {
+		font-size: 12px;
+	}
+}

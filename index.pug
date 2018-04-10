@@ -1,0 +1,238 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+
+    link(rel='stylesheet', href='styles/app.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.9/css/all.css' integrity='sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1' crossorigin='anonymous')
+  body
+    header.l-header
+      .l-header__inner
+        nav.l-header__inner__siteNav
+          ul.l-header__inner__siteNav__list
+            - var navArray = ['Top', 'About', 'Works', 'Lab', 'Contact'];
+            each val in navArray
+              li.l-header__inner__siteNav__list__item
+                a(href='#' + val)
+                  h2=val
+                  .isActive
+        ul.l-header__inner__shareLinks
+          -
+            var sns = [
+            {
+              name: 'twitter',
+              link: 'https://twitter.com/share?url=&text=メープルもみじ、堂寺志門のホームページ。'
+            },
+            {
+              name: 'facebook-f',
+              link: 'https://www.facebook.com/sharer/sharer.php?u=http://maple-tree.moo.jp'
+            }];
+          each val in sns
+            li.l-header__inner__shareLinks__item
+              a(href=val.link)
+                i(class=`fab fa-${val.name}`)
+
+    section.l-first-view#Top
+      .l-first-view__inner
+        .l-first-view__inner__siteTitle
+          h1 Maple Tree
+          h2 Shimon Dotera's SITE
+        .l-first-view__inner__downArrow
+          p Scroll Down
+          i(class='fas fa-sort-down')
+
+    section.l-about#About
+      .l-container
+        h1.l-container__sectionTitle About &gt; me
+        .l-about__intro
+          .l-about__intro__balloon
+            p Hello World!  
+            p I’m a Front-end Developer.
+            p Let me introduce myself using…
+          img(src="images/my-icon.png").l-about__intro__icon
+        ul.l-about__btns
+          -
+            var btnItem = [
+              {
+                name: 'HTML',
+                isActive: true
+              },
+              {
+                name: 'Pug',
+                isActive: false
+              },
+              {
+                name: 'CSS',
+                isActive: false
+              },
+              {
+                name: 'Scss',
+                isActive: false
+              },
+              {
+                name: 'jQuery',
+                isActive: false
+              },
+              {
+                name: 'React',
+                isActive: false
+              }
+            ];
+          each item in btnItem
+            li(id=item.name+'Btn' class=item.isActive ? 'btnActive' : '').l-about__btns__item
+              p #{item.name}
+        .l-about__text-area
+          -
+            var profileItem = {
+              name: '堂寺志門',
+              handle: 'メープルもみじ',
+              status: '情報系の大学4年生',
+              hobby: 'Web制作/音楽/ゲーム/アニメ鑑賞',
+              specialty: 'ボイパ'
+            };
+          .l-about__text-area__item#HTMLText.textActive
+            p &lt;div class='profile'&gt;
+            ul.l-about__text-area__list.mL25
+              each val,key in profileItem
+                li.l-about__text-area__list__item &lt;div class='#{key}'&gt;#{val}&lt;/div&gt;
+            p &lt;/div&gt;
+
+          .l-about__text-area__item#PugText
+            p .profile
+            ul.l-about__text-area__list.mL25
+              each val,key in profileItem
+                li.l-about__text-area__list__item .#{key} #{val}
+
+          .l-about__text-area__item#CSSText
+            p .profile {
+            ul.l-about__text-area__list.mL25
+              each val,key in profileItem
+                li.l-about__text-area__list__item #{key}:  '#{val}';
+            p }
+
+          .l-about__text-area__item#ScssText
+            p $profile: {
+            ul.l-about__text-area__list.mL20
+              each val,key in profileItem
+                if key === 'specialty'
+                  li.l-about__text-area__list__item #{key}: '#{val}'
+                else
+                  li.l-about__text-area__list__item #{key}: '#{val}',
+            p };
+            p @each $key, $val in $profile {
+            p.mL20 .\#{$key} {
+            p.mL25 content: $val;
+            p.mL20 }
+            p }
+
+          .l-about__text-area__item#jQueryText
+            p $(‘#jquerBtn’).click(function(){
+            p.mL25 const profile = {
+            ul.l-about__text-area__list.mL40
+              each val,key in profileItem
+                if key === 'specialty'
+                  li.l-about__text-area__list__item #{key}: '#{val}'
+                else
+                  li.l-about__text-area__list__item #{key}: '#{val}',
+            p.mL25 }
+            p.mL25 $('#textArea').append(profile)
+            p }
+
+          .l-about__text-area__item#ReactText
+            p render() {
+            p.mL20 return (
+            ul.l-about__text-area__list.mL30
+              each val,key in profileItem
+                li.l-about__text-area__list__item &lt;#{key}&gt;#{val}&lt;/#{key}&gt;
+            p.mL20 )
+            p }
+
+    section.l-works#Works
+      .l-container
+        h1.l-container__sectionTitle My &gt; Works
+        ul.l-works__list
+          include includes/workItem
+          each item in worksList
+            li.l-works__list__item
+              if item.name
+                .l-works__list__item__inner
+                  a(href=item.linkUrl).l-works__list__item__inner__linkBox
+                    p Open this site
+                  img.l-works__list__item__inner__imgArea(src=`images/${item.imageUrl}`)
+                  .l-works__list__item__inner__textArea
+                    h2=item.name
+                    p=item.text
+                    .l-works__list__item__inner__textArea__tag
+                      each val in item.tag
+                        span=val
+                   
+    section.l-lab#Lab
+      .l-container
+        h1.l-container__sectionTitle Maple Lab.
+        .l-lab__description
+          p 巷に溢れる数多くのWebデザイン。
+          p それらを一つでも多く自分のものとしたい。再現したい。
+          p そんな思いで作ったデザイン集です。
+        .l-lab__treeArea
+          .l-lab__treeArea__line
+          .l-lab__treeArea__points
+            -
+              var labImages = [
+                {},
+                {
+                  imageUrl: 'MapleHero.png',
+                  linkUrl: 'mapleLab/MapleHero',
+                  isRight: false
+                },
+                {
+                  imageUrl: 'MapleMenu2.png',
+                  linkUrl: 'ml',
+                  isRight: true
+                },
+                {
+                  imageUrl: 'MapleModal.png',
+                  linkUrl: 'mm',
+                  isRight: false
+                }
+              ]
+            each item in labImages
+              .l-lab__treeArea__points__item
+                if item.imageUrl
+                  .l-lab__treeArea__points__item__branch(class=item.isRight ? 'isRight' : '')
+                  a.l-lab__treeArea__points__item__image(href=item.linkUrl class=item.isRight ? 'isRight' : '')
+                    img(src=`images/${item.imageUrl}`)
+                    .l-lab__treeArea__points__item__image__caption Open This Design
+          .l-lab__treeArea__dots
+          .l-lab__treeArea__dots
+          .l-lab__treeArea__dots
+        .l-lab__btnArea
+          a(href='maplelab').l-lab__btnArea__btn More
+
+    section.l-contact#Contact
+      .l-container
+        h1.l-container__sectionTitle Contact &gt; me
+        .l-contact__text
+          p お問い合わせ、ご連絡は以下のいずれかからお願いいたします。
+        ul.l-contact__sns
+          include includes/snsItem
+          each item in snsItem
+            li.l-contact__sns__item
+              a(href=item.linkUrl target='_blank')
+                if item.fontName
+                  i(class=`fab fa-${item.fontName}` style=`color:${item.color};`)
+                else
+                  img(src=`images/${item.image}`)
+
+    section.l-footer
+      .l-footer__icon
+        i.fab.fa-envira
+      .l-footer__text
+        h1 Maple Tree
+      .l-footer__copyrights
+        p copyrights 2017-2018 MapleMomiji.All Rights Reserved.
+
+    script(src='https://code.jquery.com/jquery-1.12.4.min.js' integrity='sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=' crossorigin='anonymous')
+    script(src='scripts/main.js')

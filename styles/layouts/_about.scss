@@ -1,0 +1,77 @@
+.l-about {
+	font-family: $mainFont;
+	background-color: #fff;
+	color: $textColor;
+	padding: 42px 0 92px;
+	text-align: center;
+	&__intro {
+		width: 700px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		&__balloon {
+			width: 485px;
+			height: 124px;
+			padding: 11px 93px 5px 73px;
+			border: 1px solid #979797;
+			border-radius: 8px;
+			margin-right: 50px;
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 100%;
+ 				margin-top: -15px;
+				border: 15px solid transparent;
+				border-left: 15px solid #979797;
+			}
+			p {
+				font-size: 18px;
+				text-align: left;
+				line-height: 36px;
+				font-family: $subFont;
+			}
+		}
+		&__icon {
+			width: 165px;
+			height: 165px;
+			border-radius: 50%;
+		}
+	}
+	&__btns {
+		cursor: pointer;
+		width: 600px;
+		margin: 0 auto;
+		margin-top: 36px;
+		display: flex;
+		justify-content: space-between;
+		&__item {
+			padding: 5px 11px;
+			background-color: #d8d8d8;
+			border-radius: 8px;
+			margin-right: 32px;
+			font-size: 24px;
+			&:hover,&.btnActive {
+				background-color: #369;
+				color: #fff;
+			}
+		}
+	}
+	&__text-area {
+		font-family: $subFont;
+		margin-top: 36px;
+		padding-left: 30%;
+		text-align: left;
+		line-height: 26px;
+		font-size: 18px;
+		&__item {
+			display: none;
+			&.textActive {
+				display: block;
+			}
+		}
+		&__list {
+		}
+	}
+}

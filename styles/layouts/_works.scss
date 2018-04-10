@@ -1,0 +1,102 @@
+.l-works {
+	padding: 49px 0 109px;
+	background-color: #eee;
+	color: $textColor;
+	font-family: $subFont;
+	.l-container__sectionTitle {
+		font-family: $mainFont;
+		margin-bottom: 40px;
+	}
+	&__list {
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		&__item {
+			width: 195px;
+			height: 273px;
+			margin-right: 54px;
+			border: 1px solid #ddd;
+			
+			$x: 10;//item総数
+			@for $i from 1 through $x {
+				// 折り返し地点のitemのみmariginを無効に
+				@if $i%4==0 {
+					&:nth-of-type(#{$i}) {
+						margin-right: 0;
+					}
+				}
+				// 改行したitemにはmarginTopを付与
+				@if $i > 4 {
+					&:nth-of-type(#{$i}) {
+						margin-top: 38px;
+					}
+				}
+			}
+			&__inner {
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+				&__linkBox {
+					z-index: 2;
+					display:block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+					line-height: 273px;
+					font-size: 20px;
+					font-weight: bold;
+					background-color: rgba(0,0,0,.6);
+					color: #fff;
+					transform: rotateY(-90deg) rotateX(-90deg);
+					transition: .4s;
+					opacity: 0;
+				}
+				&:hover &__linkBox {
+					transform: rotateY(0) rotateX(0);
+					opacity: 1;
+				}
+
+				&__imgArea {
+					display:block;
+					height: 40%;
+					width: 100%;
+					border-bottom: 1px solid #ddd;
+					overflow: hidden;
+				}
+				&__textArea {
+					background-color: #fff;
+					height: 60%;
+					padding: 15px;
+					position: relative;
+					h2 {
+						font-family: $mainFont;
+						text-align: center;
+					}
+					p {
+						margin-top: 10px;
+						font-size: 12px;
+						line-height: 14px;
+					}
+					&__tag {
+						position: absolute;
+						right: 3px;
+						bottom: 20px;
+						span {
+							background-color: #369;
+							color: #fff;
+							margin-left: 3px;
+							padding: 3px 5px;
+							border-radius: 10px;
+							font-size: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
