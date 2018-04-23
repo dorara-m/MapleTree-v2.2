@@ -1,67 +1,69 @@
 .l-about {
 	background-color: #fff;
 	color: $textColor;
-	padding: 42px 0 92px;
-	text-align: center;
+	padding: 50px 0 92px;
 	&__intro {
-		width: 700px;
-		margin: 0 auto;
 		display: flex;
-		align-items: center;
-		&__balloon {
-			width: 485px;
-			height: 124px;
-			padding: 11px 93px 5px 73px;
-			border: 1px solid #979797;
-			border-radius: 8px;
-			margin-right: 50px;
-			position: relative;
-			&::before {
-				content: "";
-				position: absolute;
-				top: 50%;
-				left: 100%;
- 				margin-top: -15px;
-				border: 15px solid transparent;
-				border-left: 15px solid #979797;
-			}
+		justify-content: space-between;
+		&__text {
+			width: 433px;
+			height: 87px;
+			font-family: $textFontEn;
 			p {
-				font-size: 18px;
+				font-size: 24px;
 				text-align: left;
 				line-height: 36px;
 			}
 		}
 		&__icon {
-			width: 165px;
-			height: 165px;
+			width: 130px;
+			height: 130px;
 			border-radius: 50%;
+			opacity: .6;
 		}
 	}
 	&__btns {
 		cursor: pointer;
-		width: 600px;
-		margin: 0 auto;
-		margin-top: 36px;
+		margin-top: 31.2px;
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		&__item {
-			padding: 5px 11px;
-			background-color: #d8d8d8;
-			border-radius: 8px;
-			margin-right: 32px;
-			font-size: 24px;
-			&:hover,&.btnActive {
-				background-color: #369;
-				color: #fff;
+			border: 1px solid #fff;
+			padding: 5px;
+			position: relative;
+			&__image {
+				width: 57px;
+				height: 57px;
+			}
+			&__triangle {
+				position: absolute;
+				bottom: -24px;
+				left: 30%;
+				display: flex;
+				justify-content:center;
+				border-right: 15px solid transparent;
+			  border-bottom: 17px solid #9b9b9b;
+			  border-left: 15px solid transparent;
+			  display: none;
+			}
+			&.btnActive {
+				.l-about__btns__item__triangle {
+					display: block;
+				}
+			}
+			&:hover {
+				border: 1px solid $textColor;
 			}
 		}
 	}
 	&__text-area {
-		margin-top: 36px;
-		padding-left: 30%;
+		background-color: rgba(238, 238, 238, .6);
+		padding: 50px 24px;
+		margin-top: 87px;
 		text-align: left;
 		line-height: 26px;
 		font-size: 18px;
+		font-family: $codeFont;
 		&__item {
 			display: none;
 			&.textActive {

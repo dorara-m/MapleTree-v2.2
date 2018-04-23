@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
-@import url('https://fonts.googleapis.com/earlyaccess/mplus1p.css');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
 * {
 	box-sizing: border-box;
@@ -18,4 +18,4 @@ $textColor: #336699;
 $headFont:'Oswald', sans-serif;
 $textFontEn: 'Century Gothic', sans-serif;
 $textFontJa: 'Hiragino Sans', serif;
-$codeFont: 'material', sans-serif;
+$codeFont: 'Inconsolata', monospace;

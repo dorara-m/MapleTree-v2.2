@@ -32,9 +32,9 @@ html
 
     section.l-about#About
       .l-container
-        h1.l-container__sectionTitle About &gt; me
+        h1.l-container__title About
         .l-about__intro
-          .l-about__intro__balloon
+          .l-about__intro__text
             p Hello World!  
             p I’m a Front-end Developer.
             p Let me introduce myself using…
@@ -43,33 +43,40 @@ html
           -
             var btnItem = [
               {
-                name: 'HTML',
+                name: 'html',
+                image_url: 'images/html5.svg',
                 isActive: true
               },
               {
-                name: 'Pug',
+                name: 'pug',
+                image_url: 'images/pug-icon.png',
                 isActive: false
               },
               {
-                name: 'CSS',
+                name: 'css',
+                image_url: 'images/css3.svg',
                 isActive: false
               },
               {
-                name: 'Scss',
+                name: 'sass',
+                image_url: 'images/sass.svg',
                 isActive: false
               },
               {
-                name: 'jQuery',
+                name: 'jquery',
+                image_url: 'images/jquery-icon.png',
                 isActive: false
               },
               {
-                name: 'React',
+                name: 'react',
+                image_url: 'images/react.svg',
                 isActive: false
               }
             ];
           each item in btnItem
             li(id=item.name+'Btn' class=item.isActive ? 'btnActive' : '').l-about__btns__item
-              p #{item.name}
+              img.l-about__btns__item__image(src=item.image_url)
+              .l-about__btns__item__triangle
         .l-about__text-area
           -
             var profileItem = {
@@ -79,27 +86,27 @@ html
               hobby: 'Web制作/音楽/ゲーム/アニメ鑑賞',
               specialty: 'ボイパ'
             };
-          .l-about__text-area__item#HTMLText.textActive
+          .l-about__text-area__item#htmlText.textActive
             p &lt;div class='profile'&gt;
             ul.l-about__text-area__list.mL25
               each val,key in profileItem
                 li.l-about__text-area__list__item &lt;div class='#{key}'&gt;#{val}&lt;/div&gt;
             p &lt;/div&gt;
 
-          .l-about__text-area__item#PugText
+          .l-about__text-area__item#pugText
             p .profile
             ul.l-about__text-area__list.mL25
               each val,key in profileItem
                 li.l-about__text-area__list__item .#{key} #{val}
 
-          .l-about__text-area__item#CSSText
+          .l-about__text-area__item#cssText
             p .profile {
             ul.l-about__text-area__list.mL25
               each val,key in profileItem
                 li.l-about__text-area__list__item #{key}:  '#{val}';
             p }
 
-          .l-about__text-area__item#ScssText
+          .l-about__text-area__item#sassText
             p $profile: {
             ul.l-about__text-area__list.mL20
               each val,key in profileItem
@@ -114,7 +121,7 @@ html
             p.mL20 }
             p }
 
-          .l-about__text-area__item#jQueryText
+          .l-about__text-area__item#jqueryText
             p $(‘#jquerBtn’).click(function(){
             p.mL25 const profile = {
             ul.l-about__text-area__list.mL40
@@ -127,7 +134,7 @@ html
             p.mL25 $('#textArea').append(profile)
             p }
 
-          .l-about__text-area__item#ReactText
+          .l-about__text-area__item#reactText
             p render() {
             p.mL20 return (
             p.mL30 &lt;div&gt;

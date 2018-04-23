@@ -1,9 +1,10 @@
 .l-container {
 	width: 596px;
 	margin: 0 auto;
-	&__sectionTitle {
-		font-size: 36px;
-		margin-bottom:20px;
-		text-align: center;
+	&__title {
+		font-size: 45px;
+		margin-bottom: 25px;
+		text-align: left;
+		font-family: $headFont;
 	}
 }
