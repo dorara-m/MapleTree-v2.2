@@ -40,39 +40,7 @@ html
             p Let me introduce myself using…
           img(src="images/my-icon.png").l-about__intro__icon
         ul.l-about__btns
-          -
-            var btnItem = [
-              {
-                name: 'html',
-                image_url: 'images/html5.svg',
-                isActive: true
-              },
-              {
-                name: 'pug',
-                image_url: 'images/pug-icon.png',
-                isActive: false
-              },
-              {
-                name: 'css',
-                image_url: 'images/css3.svg',
-                isActive: false
-              },
-              {
-                name: 'sass',
-                image_url: 'images/sass.svg',
-                isActive: false
-              },
-              {
-                name: 'jquery',
-                image_url: 'images/jquery-icon.png',
-                isActive: false
-              },
-              {
-                name: 'react',
-                image_url: 'images/react.svg',
-                isActive: false
-              }
-            ];
+          include includes/btnItem
           each item in btnItem
             li(id=item.name+'Btn' class=item.isActive ? 'btnActive' : '').l-about__btns__item
               img.l-about__btns__item__image(src=item.image_url)
