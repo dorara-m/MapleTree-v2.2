@@ -1,5 +1,5 @@
 $(function(){
-	const $navLink = $('.l-header__inner__siteNav__list__item a');
+	const $navLink = $('.l-header__siteNav__list__item a');
 	const contentsArr = [];
 	
 	calcContentsPosition($navLink, contentsArr);

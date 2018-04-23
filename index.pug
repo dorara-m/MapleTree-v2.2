@@ -10,39 +10,25 @@ html
     link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.9/css/all.css' integrity='sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1' crossorigin='anonymous')
   body
     header.l-header
-      .l-header__inner
-        nav.l-header__inner__siteNav
-          ul.l-header__inner__siteNav__list
+      .l-container
+        nav.l-header__siteNav
+          ul.l-header__siteNav__list
             - var navArray = ['Top', 'About', 'Works', 'Lab', 'Contact'];
             each val in navArray
-              li.l-header__inner__siteNav__list__item
+              li.l-header__siteNav__list__item
                 a(href='#' + val)
                   h2=val
                   .isActive
-        ul.l-header__inner__shareLinks
-          -
-            var sns = [
-            {
-              name: 'twitter',
-              link: 'https://twitter.com/share?url=&text=メープルもみじ、堂寺志門のホームページ。'
-            },
-            {
-              name: 'facebook-f',
-              link: 'https://www.facebook.com/sharer/sharer.php?u=http://maple-tree.moo.jp'
-            }];
-          each val in sns
-            li.l-header__inner__shareLinks__item
-              a(href=val.link)
-                i(class=`fab fa-${val.name}`)
 
     section.l-first-view#Top
       .l-first-view__inner
-        .l-first-view__inner__siteTitle
-          h1 Maple Tree
-          h2 Shimon Dotera's SITE
-        .l-first-view__inner__downArrow
-          p Scroll Down
-          i(class='fas fa-sort-down')
+        .l-container
+          .l-first-view__inner__siteTitle
+            h1 Maple Tree
+            h2 Shimon Dotera's SITE
+          .l-first-view__inner__downArrow
+            p Scroll Down
+            i(class='fas fa-sort-down')
 
     section.l-about#About
       .l-container

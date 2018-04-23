@@ -2,9 +2,7 @@
 	padding: 49px 0 109px;
 	background-color: #eee;
 	color: $textColor;
-	font-family: $subFont;
 	.l-container__sectionTitle {
-		font-family: $mainFont;
 		margin-bottom: 40px;
 	}
 	&__list {
@@ -74,7 +72,6 @@
 					padding: 15px;
 					position: relative;
 					h2 {
-						font-family: $mainFont;
 						text-align: center;
 					}
 					p {

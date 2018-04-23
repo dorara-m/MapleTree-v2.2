@@ -1,5 +1,4 @@
 .l-about {
-	font-family: $mainFont;
 	background-color: #fff;
 	color: $textColor;
 	padding: 42px 0 92px;
@@ -30,7 +29,6 @@
 				font-size: 18px;
 				text-align: left;
 				line-height: 36px;
-				font-family: $subFont;
 			}
 		}
 		&__icon {
@@ -59,7 +57,6 @@
 		}
 	}
 	&__text-area {
-		font-family: $subFont;
 		margin-top: 36px;
 		padding-left: 30%;
 		text-align: left;

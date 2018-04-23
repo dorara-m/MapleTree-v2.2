@@ -1,33 +1,38 @@
 .l-first-view {
-	font-family: $mainFont;
 	background-image: url(../images/hero-bg.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
  	height: calc(100vh);
+ 	font-family: $textFontEn;
  	&__inner {
  		background-color: rgba(0,0,0,0.4);
  		height: 100%;
  		color: #fff;
+ 		.l-container {
+ 			position: relative;
+ 			height: 100%;
+ 		}
  		&__siteTitle {
  			position: absolute;
  			top: 50%;
- 			left: 50%;
- 			transform: translate(-50%,-50%);
+ 			left: 0;
+ 			transform: translateY(-50%);
  			h1 {
- 				font-size: 100px;
+ 				font-family: $headFont;
+ 				font-size: 90px;
+ 				line-height: 133px;
  			}
  			h2 {
- 				text-align: center;
- 				margin-top: 30px;
  				font-size: 28px;
+ 				font-weight: normal;
  			}
  		}
  		&__downArrow {
  			position:absolute;
  			left: 50%;
  			transform: translate(-50%,0);
- 			bottom: 27px;
+ 			bottom: 30px;
  			text-align: center;
  			p {
  				font-size: 18px;

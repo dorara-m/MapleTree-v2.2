@@ -1,5 +1,5 @@
 .l-header {
-	font-family: $mainFont;
+	font-family: $textFontEn;
 	background-color: #fff;
 	color: $textColor;
 	position: fixed;
@@ -10,35 +10,24 @@
  	height:50px;
  	line-height: 50px;
  	box-shadow: 1px 0 5px #999;
-	&__inner {
-		padding: 0 50px;
-		display: flex;
- 		justify-content: space-between;
-		&__siteNav {
-	 		&__list {
-	 			display: flex;
-	 			&__item {
-	 				font-size: 24px;
-	 				margin-right: 32.2px;
-	 				position: relative;
-	 				.current {
-	 					.isActive {
-	 						position: absolute;
-	 						bottom: 0;
-	 						width: 100%;
-	 						height: 3px;
-	 						background-color: #369;
-	 					}
-	 				}
-	 			}
-	 		}
-		}
-		&__shareLinks {
-	 		display: flex;
-	 		&__item {
-	 			font-size: 22px;
-	 			margin-left: 19px;
-	 		}
-	 	}
+	&__siteNav {
+ 		&__list {
+ 			display: flex;
+ 			justify-content: space-around;
+ 			&__item {
+ 				font-size: 24px;
+ 				position: relative;
+ 				.current {
+ 					.isActive {
+ 						position: absolute;
+ 						bottom: 0;
+ 						width: 100%;
+ 						height: 3px;
+ 						background-color: #369;
+ 					}
+ 				}
+ 			}
+ 		}
 	}
+	
 }
