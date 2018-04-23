@@ -9,15 +9,11 @@
  		background-color: rgba(0,0,0,0.4);
  		height: 100%;
  		color: #fff;
- 		.l-container {
- 			position: relative;
- 			height: 100%;
- 		}
  		&__siteTitle {
  			position: absolute;
  			top: 50%;
- 			left: 0;
- 			transform: translateY(-50%);
+ 			left: 50%;
+ 			transform: translate(-50%, -50%);
  			h1 {
  				font-family: $headFont;
  				font-size: 90px;
@@ -26,6 +22,7 @@
  			h2 {
  				font-size: 28px;
  				font-weight: normal;
+ 				text-align: center;
  			}
  		}
  		&__downArrow {

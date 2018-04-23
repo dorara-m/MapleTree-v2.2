@@ -38,23 +38,22 @@ html
 
     section.l-first-view#Top
       .l-first-view__inner
-        .l-container
-          .l-first-view__inner__siteTitle
-            h1 Maple Tree
-            h2 Shimon Dotera's SITE
-          .l-first-view__inner__downArrow
-            p Scroll Down
-            i(class='fas fa-sort-down')
+        .l-first-view__inner__siteTitle
+          h1 Maple Tree
+          h2 Shimon Dotera's SITE
+        .l-first-view__inner__downArrow
+          p Scroll Down
+          i(class='fas fa-sort-down')
 
     section.l-about#About
       .l-container
         h1.l-container__title About &gt; me
         .l-about__intro
+          img(src="images/my-icon.png").l-about__intro__icon
           .l-about__intro__text
             p Hello World!  
             p I’m a Front-end Developer.
             p Let me introduce myself using…
-          img(src="images/my-icon.png").l-about__intro__icon
         ul.l-about__btns
           include includes/btnItem
           each item in btnItem
@@ -87,7 +86,7 @@ html
     section.l-lab#Lab
       .l-container
         h1.l-container__title Maple Lab.
-        .l-lab__SubText
+        .l-container__subText
           p どっかで見たことあるWebデザイン集。ここのデザインなら実装できます。デザインカタログ的な。
         .l-lab__treeArea
           .l-lab__treeArea__line
@@ -128,7 +127,7 @@ html
       .l-container
         h1.l-container__title Contact &gt; me
         .l-container__subText
-          p お問い合わせ、ご連絡は以下のいずれかからお願いいたします。
+          p 以下のSNSで活動中。Twitter出没率が高め。
         ul.l-contact__sns
           include includes/snsItem
           each item in snsItem

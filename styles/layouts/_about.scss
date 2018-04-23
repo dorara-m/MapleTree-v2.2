@@ -3,23 +3,21 @@
 	color: $textColor;
 	padding: 50px 0 92px;
 	&__intro {
-		display: flex;
-		justify-content: space-between;
-		&__text {
-			width: 433px;
-			height: 87px;
-			font-family: $textFontEn;
-			p {
-				font-size: 24px;
-				text-align: left;
-				line-height: 36px;
-			}
-		}
+		text-align: center;
 		&__icon {
 			width: 130px;
 			height: 130px;
 			border-radius: 50%;
-			opacity: .6;
+			margin-bottom: 30px;
+		}
+		&__text {
+			font-size: 20px;
+			line-height: 24px;
+			text-align: left;
+			width: 339px;
+			margin: 0 auto;
+			height: 87px;
+			font-family: $textFontEn;
 		}
 	}
 	&__btns {
@@ -32,13 +30,13 @@
 			padding: 5px;
 			position: relative;
 			&__image {
-				width: 57px;
-				height: 57px;
+				width: 40px;
+				height: 40px;
 			}
 			&__triangle {
 				position: absolute;
 				bottom: -24px;
-				left: 30%;
+				left: 23%;
 				display: flex;
 				justify-content:center;
 				border-right: 15px solid transparent;
