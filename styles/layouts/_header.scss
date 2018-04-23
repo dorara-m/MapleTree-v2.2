@@ -10,11 +10,19 @@
  	height:50px;
  	line-height: 50px;
  	box-shadow: 1px 0 5px #999;
+ 	@media (max-width: 600px) {
+ 		display: none;
+ 	}
 	&__inner {
 		width: 960px;
 		margin: 0 auto;
 		display: flex;
  		justify-content: space-between;
+ 		@media (max-width: 1023px) {
+ 			width:auto;
+ 			margin:0;
+ 			padding: 0 50px;
+	 	}
 		&__siteNav {
 	 		&__list {
 	 			display: flex;
@@ -22,6 +30,9 @@
 	 				font-size: 24px;
 	 				margin-right: 32.2px;
 	 				position: relative;
+	 				@media (max-width: 1023px) {
+	 					font-size: 18px;
+	 				}
 	 				.current {
 	 					.isActive {
 	 						position: absolute;
@@ -41,5 +52,65 @@
 	 			margin-left: 19px;
 	 		}
 	 	}
+	}
+}
+
+// ---- mobile --------
+.l-header-mobile {
+	display: none;
+	@media (max-width: 600px) {
+		display: block;
+		position: fixed;
+		right: 14px;
+		top: 20px;
+		left: auto;
+		width: 51px;
+		height: 51px;
+		border-radius: 50%;
+		background-color: $textColor;
+		color: #fff;
+		padding: 5px;
+		text-align: center;
+	}
+	&__text {
+		font-size: 10px;
+		margin-bottom: 3px;
+	}
+	&__icon {
+		font-size: 30px;
+	}
+	&__opened {
+		display: none;
+		@media (max-width: 600px) {
+			// display: block;
+			position: absolute;
+			top: 20px;
+			width: 100%;
+			height: calc(100vh - 40px);
+			background-color: rgba(51, 102, 153, 0.9);
+			color: #fff;
+			z-index: 1000;
+			border-radius: 20px;
+		}
+		&__close {
+			position: absolute;
+			font-size: 48px;
+			top: 10px;
+			right: 19px;
+		}
+		&__nav {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			text-align: center;
+			transform: translate(-50%, -50%);
+			&__item {
+				font-size: 24px;
+				line-height: 29px;
+				margin-bottom: 44px;
+				font-family: $textFontEn;
+				font-weight: bold;
+			}
+		}
 	}
 }
