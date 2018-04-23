@@ -2,8 +2,11 @@
 	padding: 49px 0 109px;
 	background-color: #eee;
 	color: $textColor;
-	.l-container__sectionTitle {
-		margin-bottom: 40px;
+	.l-container {
+		width: 960px;
+		&__subText {
+			margin-bottom: 40px;
+		}
 	}
 	&__list {
 		width: 100%;

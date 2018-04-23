@@ -2,16 +2,8 @@
 	padding: 46px 0 66px;
 	background-color: #eee;
 	color: $textColor;
-	.l-container__sectionTitle {
-		margin-bottom: 29px;
-	}
-	&__text {
-		font-size: 14px;
-		line-height: 21px;
-		text-align: center;
-	}
 	&__sns {
-		margin: 30px auto;
+		margin: 33px auto;
 		width: 400px;
 		display: flex;
 		justify-content: space-between;

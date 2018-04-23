@@ -10,15 +10,31 @@ html
     link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.9/css/all.css' integrity='sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1' crossorigin='anonymous')
   body
     header.l-header
-      .l-container
-        nav.l-header__siteNav
-          ul.l-header__siteNav__list
+      .l-header__inner
+        nav.l-header__inner__siteNav
+          ul.l-header__inner__siteNav__list
             - var navArray = ['Top', 'About', 'Works', 'Lab', 'Contact'];
             each val in navArray
-              li.l-header__siteNav__list__item
+              li.l-header__inner__siteNav__list__item
                 a(href='#' + val)
                   h2=val
                   .isActive
+        ul.l-header__inner__shareLinks
+          -
+            var sns = [
+            {
+              name: 'twitter',
+              link: 'https://twitter.com/share?url=&text=メープルもみじ、堂寺志門のホームページ。'
+            },
+            {
+              name: 'facebook-f',
+              link: 'https://www.facebook.com/sharer/sharer.php?u=http://maple-tree.moo.jp'
+            }];
+          each val in sns
+            li.l-header__inner__shareLinks__item
+              a(href=val.link)
+                i(class=`fab fa-${val.name}`)
+
 
     section.l-first-view#Top
       .l-first-view__inner
@@ -32,7 +48,7 @@ html
 
     section.l-about#About
       .l-container
-        h1.l-container__title About
+        h1.l-container__title About &gt; me
         .l-about__intro
           .l-about__intro__text
             p Hello World!  
@@ -50,7 +66,8 @@ html
           
     section.l-works#Works
       .l-container
-        h1.l-container__sectionTitle My &gt; Works
+        h1.l-container__title My &gt; Works
+        p.l-container__subText 今までの制作物一覧。最新順。
         ul.l-works__list
           include includes/workItem
           each item in worksList
@@ -69,11 +86,9 @@ html
                    
     section.l-lab#Lab
       .l-container
-        h1.l-container__sectionTitle Maple Lab.
-        .l-lab__description
-          p 巷に溢れる数多くのWebデザイン。
-          p それらを一つでも多く自分のものとしたい。再現したい。
-          p そんな思いで作ったデザイン集です。
+        h1.l-container__title Maple Lab.
+        .l-lab__SubText
+          p どっかで見たことあるWebデザイン集。ここのデザインなら実装できます。デザインカタログ的な。
         .l-lab__treeArea
           .l-lab__treeArea__line
           .l-lab__treeArea__points
@@ -111,8 +126,8 @@ html
 
     section.l-contact#Contact
       .l-container
-        h1.l-container__sectionTitle Contact &gt; me
-        .l-contact__text
+        h1.l-container__title Contact &gt; me
+        .l-container__subText
           p お問い合わせ、ご連絡は以下のいずれかからお願いいたします。
         ul.l-contact__sns
           include includes/snsItem

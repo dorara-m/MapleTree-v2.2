@@ -2,9 +2,14 @@
 	width: 596px;
 	margin: 0 auto;
 	&__title {
+		text-align:center;
 		font-size: 45px;
 		margin-bottom: 25px;
-		text-align: left;
 		font-family: $headFont;
+	}
+	&__subText {
+		font-size: 16px;
+		line-height: 20px;
+		text-align: center;
 	}
 }
