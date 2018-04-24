@@ -7,6 +7,9 @@
 		@media (max-width: 1023px) {
  			width: 600px;
 	 	}
+	 	@media (max-width: 600px) {
+			width: 90%;
+		}
 		&__subText {
 			margin-bottom: 40px;
 		}
@@ -16,13 +19,16 @@
 		margin: 0 auto;
 		display: flex;
 		flex-wrap: wrap;
+		@media (max-width: 600px) {
+			display: block;
+		}
 		&__item {
 			width: 195px;
 			height: 273px;
 			margin-right: 54px;
 			border: 1px solid #ddd;
 			
-			$x: 10;//item総数
+			$x: 6;//item総数
 			@for $i from 1 through $x {
 				// 折り返し地点のitemのみmariginを無効に
 				@if $i%4==0 {
@@ -59,6 +65,14 @@
 						&:nth-of-type(#{$i}) {
 							margin-top: 38px;
 						}
+					}
+				}
+			}
+			@media (max-width: 600px) {
+				@for $i from 1 through $x {
+					&:nth-of-type(#{$i}) {
+						margin: 0 auto;
+						margin-bottom: 42px;
 					}
 				}
 			}
