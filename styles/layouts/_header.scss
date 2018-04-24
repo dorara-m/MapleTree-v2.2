@@ -55,7 +55,7 @@
 	}
 }
 
-// ---- mobile --------
+// ---- for mobile --------
 .l-header-mobile {
 	display: none;
 	@media (max-width: 600px) {
@@ -67,6 +67,7 @@
 		width: 51px;
 		height: 51px;
 		border-radius: 50%;
+		box-shadow: 1px 1px 5px #999;
 		background-color: $textColor;
 		color: #fff;
 		padding: 5px;
