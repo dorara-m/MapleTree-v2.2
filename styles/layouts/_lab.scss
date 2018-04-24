@@ -2,6 +2,9 @@
 	padding: 55px 0 85px;
 	color: $textColor;
 	font-family: $textFontEn;
+	@media (max-width: 600px) {
+		display: none;
+	}
 	.l-container__sectionTitle {
 		font-size: 36px;
 		margin-bottom: 26px;

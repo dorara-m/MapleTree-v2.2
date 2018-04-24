@@ -2,13 +2,39 @@
 	padding: 46px 0 66px;
 	background-color: #eee;
 	color: $textColor;
+	@media (max-width: 600px) {
+		background-color: #fff;
+	}
 	&__sns {
 		margin: 55px auto 0;
 		width: 400px;
 		display: flex;
 		justify-content: space-between;
+		@media (max-width: 600px) {
+			justify-content: flex-start;
+			width: 162px;
+			flex-wrap: wrap;
+		}
 		&__item {
 			font-size: 32px;
+			@media (max-width: 600px) {
+				margin-right: 38px;
+				$x: 6;
+				@for $i from 1 through $x {
+					// 折り返し地点のitemのみmariginを無効に
+					@if $i%3==0 {
+						&:nth-of-type(#{$i}) {
+							margin-right: 0;
+						}
+					}
+					// 改行したitemにはmarginTopを付与
+					@if $i > 3 {
+						&:nth-of-type(#{$i}) {
+							margin-top: 20px;
+						}
+					}
+				}
+			}
 			&:hover {
 				opacity: 0.5;
 			}
