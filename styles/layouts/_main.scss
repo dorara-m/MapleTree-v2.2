@@ -1,12 +1,19 @@
 .l-container {
 	width: 596px;
 	margin: 0 auto;
+	@media (max-width: 600px) {
+		width: 90%;
+	}
 	&__title {
 		text-align:center;
 		font-size: 45px;
 		margin-bottom: 25px;
 		font-family: $headFont;
 		line-height: 67px;
+		@media (max-width: 600px) {
+			font-size: 36px;
+			line-height: 53px;
+		}
 	}
 	&__subText {
 		font-size: 16px;

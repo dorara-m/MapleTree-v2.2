@@ -61,6 +61,7 @@ html
         h1.l-container__title About &gt; me
         .l-about__intro
           img(src="images/my-icon.png").l-about__intro__icon
+          h3.l-about__intro__name Shimon Dotera
           .l-about__intro__text
             p Hello World!  
             p I’m a Front-end Developer.
@@ -73,7 +74,19 @@ html
               .l-about__btns__item__triangle
         .l-about__text-area
           include includes/profileTextList
-          
+
+        .l-about__text-mobile
+          .l-about__text-mobile__item name: 堂寺志門
+          .l-about__text-mobile__item handle: メープルもみじ
+          .l-about__text-mobile__item status: 情報系大学4年生
+          .l-about__text-mobile__item hobby: web制作/音楽/ゲーム/アニメ
+          .l-about__text-mobile__item specialty: ボイパ
+        ul.l-about__icons-mobile
+          include includes/btnItem
+          each item in btnItem
+            li(class=item.name).l-about__icons-mobile__item
+              img.l-about__icons-mobile__item__image(src=item.image_url)
+
     section.l-works#Works
       .l-container
         h1.l-container__title My &gt; Works
