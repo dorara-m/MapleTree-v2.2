@@ -47,9 +47,18 @@
 		}
 		&__shareLinks {
 	 		display: flex;
+	 		align-items: center;
 	 		&__item {
-	 			font-size: 22px;
-	 			margin-left: 19px;
+	 			font-size: 18px;
+	 			margin-left: 10px;
+	 			background-color: #369;
+	 			color: #fff;
+	 			width:30px;
+	 			height: 30px;
+	 			display: flex;
+	 			justify-content: center;
+	 			align-items:center;
+	 			border-radius: 50%;
 	 		}
 	 	}
 	}
