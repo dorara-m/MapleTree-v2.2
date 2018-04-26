@@ -110,7 +110,7 @@
 			&__item {
 				padding: 5px;
 				margin-right: 26px;
-				$x: 6;
+				$x: 7;
 				@for $i from 1 through $x {
 					// 折り返し地点のitemのみmariginを無効に
 					@if $i%3==0 {
