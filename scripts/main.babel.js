@@ -1,6 +1,7 @@
+const contentsArr = []
+const $navLink = $('.l-header__inner__siteNav__list__item a');
+
 $(function(){
-	const $navLink = $('.l-header__inner__siteNav__list__item a');
-	const contentsArr = [];
 	
 	calcContentsPosition($navLink, contentsArr);
 	
@@ -71,6 +72,7 @@ function changeLanguage() {
 		const BtnId = $(this).attr("id");
 		const target = '#' + BtnId.substring(0,BtnId.length-3) + 'Text';
 		$(`${target}`).fadeIn(800).addClass('textActive');
+		calcContentsPosition($navLink, contentsArr);
 		
 	});
 }
