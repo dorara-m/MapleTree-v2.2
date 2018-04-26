@@ -55,7 +55,7 @@ html
         .l-first-view__inner__downArrow
           p Scroll Down
           i(class='fas fa-sort-down')
-
+    //- aboutSection 
     section.l-about#About
       .l-container
         h1.l-container__title About &gt; me
@@ -73,14 +73,13 @@ html
               img.l-about__btns__item__image(src=item.image_url)
               .l-about__btns__item__triangle
         .l-about__text-area
+          include includes/profileItem
           include includes/profileTextList
 
-        .l-about__text-mobile
-          .l-about__text-mobile__item name: 堂寺志門
-          .l-about__text-mobile__item handle: メープルもみじ
-          .l-about__text-mobile__item status: 情報系大学4年生
-          .l-about__text-mobile__item hobby: web制作/音楽/ゲーム/アニメ
-          .l-about__text-mobile__item specialty: ボイパ
+        ul.l-about__text-mobile
+          include includes/profileItem
+          each item,key in profileItem
+            li.l-about__text-mobile__item #{key} : #{item}
         ul.l-about__icons-mobile
           include includes/btnItem
           each item in btnItem
