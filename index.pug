@@ -13,23 +13,14 @@ html
       .l-header__inner
         nav.l-header__inner__siteNav
           ul.l-header__inner__siteNav__list
-            - var navArray = ['Top', 'About', 'Works', 'Lab', 'Contact'];
+            include includes/navArray
             each val in navArray
               li.l-header__inner__siteNav__list__item
                 a(href='#' + val)
                   h2=val
                   .isActive
         ul.l-header__inner__shareLinks
-          -
-            var sns = [
-            {
-              name: 'twitter',
-              link: 'https://twitter.com/share?url=&text=メープルもみじ、堂寺志門のホームページ。'
-            },
-            {
-              name: 'facebook-f',
-              link: 'https://www.facebook.com/sharer/sharer.php?u=http://maple-tree.moo.jp'
-            }];
+          include includes/sharelinks
           each val in sns
             li.l-header__inner__shareLinks__item
               a(href=val.link)
@@ -41,7 +32,7 @@ html
     .l-header-mobile__opened
       i.l-header-mobile__opened__close.fas.fa-times
       ul.l-header-mobile__opened__nav
-        - var navArray = ['Top', 'About', 'Works', 'Lab', 'Contact'];
+        include includes/navArray
         each val in navArray
           li.l-header-mobile__opened__nav__item
             a(href='#' + val)
@@ -114,26 +105,8 @@ html
         .l-lab__treeArea
           .l-lab__treeArea__line
           .l-lab__treeArea__points
-            -
-              var labImages = [
-                {},
-                {
-                  imageUrl: 'MapleHero.png',
-                  linkUrl: 'mapleLab/MapleHero',
-                  isRight: false
-                },
-                {
-                  imageUrl: 'MapleMenu2.png',
-                  linkUrl: 'ml',
-                  isRight: true
-                },
-                {
-                  imageUrl: 'MapleModal.png',
-                  linkUrl: 'mm',
-                  isRight: false
-                }
-              ]
-            each item in labImages
+            include includes/labItem
+            each item in labItem
               .l-lab__treeArea__points__item
                 if item.imageUrl
                   .l-lab__treeArea__points__item__branch(class=item.isRight ? 'isRight' : '')
