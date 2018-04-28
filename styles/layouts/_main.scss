@@ -1,5 +1,6 @@
 .l-container {
 	width: 596px;
+	padding: 25px 0 85px;
 	margin: 0 auto;
 	@media (max-width: 600px) {
 		width: 90%;
@@ -9,7 +10,7 @@
 		font-size: 45px;
 		margin-bottom: 25px;
 		font-family: $headFont;
-		line-height: 67px;
+		line-height: 1.6;
 		@media (max-width: 600px) {
 			font-size: 36px;
 			line-height: 53px;
@@ -17,11 +18,15 @@
 	}
 	&__subText {
 		font-size: 16px;
-		line-height: 20px;
+		line-height: 1.6;
 		text-align: center;
 		font-family: $textFontJa;
 		@media (max-width: 600px) {
 			font-size: 14px;
 		}
 	}
+}
+
+.locked {
+	overflow: hidden;
 }
