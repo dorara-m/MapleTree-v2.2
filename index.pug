@@ -26,17 +26,21 @@ html
               a(href=val.link)
                 i(class=`fab fa-${val.name}`)
 
-    header.l-header-mobile
+    header.l-header-mobile#menu
       p.l-header-mobile__text Menu
       i.l-header-mobile__icon.fas.fa-bars
-    .l-header-mobile__opened
-      i.l-header-mobile__opened__close.fas.fa-times
+    .l-header-mobile__opened#menuContents
+      i.l-header-mobile__opened__close.fas.fa-times#close
       ul.l-header-mobile__opened__nav
         include includes/navArray
         each val in navArray
           li.l-header-mobile__opened__nav__item
-            a(href='#' + val)
-              h2=val
+            if val == 'Lab'
+              a(href='MapleLAb')
+                h2=val
+            else
+              a(href='#' + val)
+                h2=val
 
     section.l-first-view#Top
       .l-first-view__inner

@@ -1,18 +1,20 @@
-const contentsArr = []
+const isMobile = window.innerWidth <= 600;
+
 const $navLink = $('.l-header__inner__siteNav__list__item a');
-
-calcContentsPosition($navLink, contentsArr);
-	
-$(window).on('load scroll', function() {
-  currentCheck($navLink, contentsArr);
-});
-	
+const contentsArr = [];
 smoothScroll($navLink);
- 	
-openSmallWindow();
 
-changeLanguage();
-
+if (!isMobile) {
+	console.log('isNotMobile');
+	calcContentsPosition($navLink, contentsArr);
+	$(window).on('load scroll', function() {
+	  currentCheck($navLink, contentsArr);
+	});
+	openSmallWindow();
+	changeLanguage();
+} else {
+	openMenu();
+}
 
 function calcContentsPosition($navLink, contentsArr) {
 	for (let i= 0; i< $navLink.length; i++) {
@@ -71,5 +73,22 @@ function changeLanguage() {
 		$(`${target}`).fadeIn(800).addClass('textActive');
 		calcContentsPosition($navLink, contentsArr);
 		
+	});
+}
+
+function openMenu() {
+	$('#menu').click(function(event) {
+		$('#menuContents').addClass('isVisible');
+		$('body').addClass('locked');
+	});
+
+	$('.l-header-mobile__opened__nav__item a').click(function(event) {
+		$('#menuContents').removeClass('isVisible');
+		$('body').removeClass('locked');
+	});
+
+	$('#close').click(function(event) {
+		$('#menuContents').removeClass('isVisible');
+		$('body').removeClass('locked');
 	});
 }
