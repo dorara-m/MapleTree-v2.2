@@ -1,21 +1,18 @@
 const contentsArr = []
 const $navLink = $('.l-header__inner__siteNav__list__item a');
 
-$(function(){
+calcContentsPosition($navLink, contentsArr);
 	
-	calcContentsPosition($navLink, contentsArr);
-	
-	$(window).on('load scroll', function() {
-    currentCheck($navLink, contentsArr);
- 	});
-	
-	smoothScroll($navLink);
- 	
-	openSmallWindow();
-
-	changeLanguage();
-
+$(window).on('load scroll', function() {
+  currentCheck($navLink, contentsArr);
 });
+	
+smoothScroll($navLink);
+ 	
+openSmallWindow();
+
+changeLanguage();
+
 
 function calcContentsPosition($navLink, contentsArr) {
 	for (let i= 0; i< $navLink.length; i++) {
