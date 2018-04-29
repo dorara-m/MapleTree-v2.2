@@ -4,7 +4,7 @@ const $navLink = $('.l-header__inner__siteNav__list__item a');
 const $navLinkMobile = $('.l-header-mobile__opened__nav__item a');
 const contentsArr = [];
 
-run(isMobile, $navLink, $navLinkMobile, contentsArr);
+run();
 
 window.addEventListener("resize", function() {
   if (currentWidth == window.innerWidth) {
@@ -12,10 +12,10 @@ window.addEventListener("resize", function() {
   }
   currentWidth = window.innerWidth;
   isMobile = window.innerWidth <= 600;
-  run(isMobile, $navLink, $navLinkMobile, contentsArr);
+  run();
 });
 
-function run(isMobile, $navLink, $navLinkMobile, contentsArr) {
+function run() {
 	if (!isMobile) {
 		calcContentsPosition($navLink, contentsArr);
 		$(window).on('load scroll', function() {
