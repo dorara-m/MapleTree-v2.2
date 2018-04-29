@@ -27,12 +27,12 @@
 	 		&__list {
 	 			display: flex;
 	 			&__item {
-	 				font-size: 22px;
+	 				font-size: 24px;
 	 				margin-right: 32.2px;
 	 				position: relative;
-	 				h2 {font-weight:normal;}
+	 				// h2 {font-weight:normal;}
 	 				@media (max-width: 1023px) {
-	 					font-size: 18px;
+	 					font-size: 20px;
 	 				}
 	 				.current {
 	 					.isActive {

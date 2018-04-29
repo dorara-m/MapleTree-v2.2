@@ -17,7 +17,7 @@
  			h1 {
  				font-family: $headFont;
  				font-size: 90px;
- 				line-height: 133px;
+ 				line-height: 1.6;
  				text-align: center;
  				white-space: nowrap;
  				@media (max-width: 600px) {
@@ -26,6 +26,7 @@
  				}
  			}
  			h2 {
+ 				font-family: $textFontJa;
  				font-size: 28px;
  				font-weight: normal;
  				text-align: center;
