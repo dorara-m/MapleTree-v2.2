@@ -1,20 +1,37 @@
-const isMobile = window.innerWidth <= 600;
-
+var currentWidth = window.innerWidth;
+let isMobile = window.innerWidth <= 600;
 const $navLink = $('.l-header__inner__siteNav__list__item a');
+const $navLinkMobile = $('.l-header-mobile__opened__nav__item a');
 const contentsArr = [];
-smoothScroll($navLink);
 
-if (!isMobile) {
-	console.log('isNotMobile');
-	calcContentsPosition($navLink, contentsArr);
-	$(window).on('load scroll', function() {
-	  currentCheck($navLink, contentsArr);
-	});
-	openSmallWindow();
-	changeLanguage();
-} else {
-	openMenu();
+run(isMobile, $navLink, $navLinkMobile, contentsArr);
+
+window.addEventListener("resize", function() {
+  if (currentWidth == window.innerWidth) {
+      return;
+  }
+  currentWidth = window.innerWidth;
+  isMobile = window.innerWidth <= 600;
+  run(isMobile, $navLink, $navLinkMobile, contentsArr);
+});
+
+function run(isMobile, $navLink, $navLinkMobile, contentsArr) {
+	if (!isMobile) {
+		calcContentsPosition($navLink, contentsArr);
+		$(window).on('load scroll', function() {
+		  currentCheck($navLink, contentsArr);
+		});
+		openSmallWindow();
+		changeLanguage();
+		smoothScroll($navLink, isMobile);
+	} else {
+		openMenu();
+		smoothScroll($navLinkMobile, isMobile);
+	}
 }
+
+
+
 
 function calcContentsPosition($navLink, contentsArr) {
 	for (let i= 0; i< $navLink.length; i++) {
@@ -42,10 +59,12 @@ function currentCheck($navLink, contentsArr) {
 	}
 }
 
-function smoothScroll($navLink) {
+function smoothScroll($navLink, isMobile) {
+	let headerHeight;
+	isMobile ?  headerHeight = 0 : headerHeight = 49;
 	$navLink.click(function() {
     $('html,body').animate({
-      scrollTop: $($(this).attr('href')).offset().top - 49
+      scrollTop: $($(this).attr('href')).offset().top - headerHeight
     }, 300);
     return false;
  	});

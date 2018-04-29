@@ -4,7 +4,7 @@ html
     meta(charset='utf-8')
     title MapleTree
     meta(name='description', content='学生フロントエンドエンジニア＆Webデザイナー、堂寺志門（メープルもみじ）のポートフォリオサイト。')
-    meta(name='viewport', content='width=device-width')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     <meta name="keywords" content="Dorashimon,MapleTree,メープルもみじ,堂寺,堂寺志門,Shimon,Shimon Dotera,メープル,もみじ,Web,フロントエンドエンジニア,ホームページ制作,Webサイト制作,ボイパ,Webデザイン">
     <meta name="author" content="Shimon Dotera">
     <meta name="generator" content="SublimeText">
@@ -33,7 +33,7 @@ html
       .l-header__inner
         nav.l-header__inner__siteNav
           ul.l-header__inner__siteNav__list
-            include includes/navArray
+            include includes/headerNavArray
             each val in navArray
               li.l-header__inner__siteNav__list__item
                 a(href='#' + val)
@@ -53,11 +53,11 @@ html
     .l-header-mobile__opened#menuContents
       i.l-header-mobile__opened__close.fas.fa-times#close
       ul.l-header-mobile__opened__nav
-        include includes/navArray
+        include includes/headerNavArray
         each val in navArray
           li.l-header-mobile__opened__nav__item
             if val == 'Lab'
-              a(href='MapleLAb')
+              a(href='http://maple-tree.moo.jp/works/MapleLab/')
                 h2=val
             else
               a(href='#' + val)
@@ -89,21 +89,21 @@ html
             p I’m a Front-end Developer.
             p Let me introduce myself using…
         ul.l-about__btns
-          include includes/btnItem
+          include includes/aboutBtns
           each item in btnItem
             li(id=item.name+'Btn' class=item.isActive ? 'btnActive' : '').l-about__btns__item
               img.l-about__btns__item__image(src=item.image_url)
               .l-about__btns__item__triangle
         .l-about__text-area
-          include includes/profileItem
-          include includes/profileTextList
+          include includes/aboutProfileItem
+          include includes/aboutProfileTextList
 
         ul.l-about__text-mobile
-          include includes/profileItem
+          include includes/aboutProfileItem
           each item,key in profileItem
             li.l-about__text-mobile__item #{key} : #{item}
         ul.l-about__icons-mobile
-          include includes/btnItem
+          include includes/aboutBtns
           each item in btnItem
             li(class=item.name).l-about__icons-mobile__item
               img.l-about__icons-mobile__item__image(src=item.image_url)
@@ -148,7 +148,7 @@ html
           .l-lab__treeArea__dots
           .l-lab__treeArea__dots
         .l-lab__btnArea
-          a(href='maplelab').l-lab__btnArea__btn More
+          a(href='http://maple-tree.moo.jp/works/MapleLab/').l-lab__btnArea__btn More
 
     section.l-contact#Contact
       .l-container
@@ -156,7 +156,7 @@ html
         .l-container__subText
           p 以下のSNSで活動中。Twitter出没率が高め。
         ul.l-contact__sns
-          include includes/snsItem
+          include includes/contactItem
           each item in snsItem
             li.l-contact__sns__item
               a(href=item.linkUrl target='_blank')
