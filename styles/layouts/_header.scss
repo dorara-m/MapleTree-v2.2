@@ -95,7 +95,7 @@
 		visibility: hidden;
 		&.isVisible {
 			visibility: visible;
-			transform: translate(0%, 0%) scale(1);
+			transform: translate(0%, 0%);
 			opacity: 1;
 			border-radius: 0;
 		}
@@ -129,6 +129,16 @@
 				margin-bottom: 44px;
 				font-family: $textFontEn;
 				font-weight: bold;
+			}
+		}
+		&__share {
+			position: absolute;
+			bottom: 30px;
+			right: 24px;
+			display: flex;
+			&__item {
+				font-size: 28px;
+				margin-left: 16px;
 			}
 		}
 	}

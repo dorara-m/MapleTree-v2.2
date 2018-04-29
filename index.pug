@@ -22,9 +22,10 @@ html
         ul.l-header__inner__shareLinks
           include includes/sharelinks
           each val in sns
-            li.l-header__inner__shareLinks__item
-              a(href=val.link)
-                i(class=`fab fa-${val.name}`)
+            if val.name !== 'line'
+              li.l-header__inner__shareLinks__item
+                a(href=val.link)
+                  i(class=`fab fa-${val.name}`)
 
     header.l-header-mobile#menu
       p.l-header-mobile__text Menu
@@ -41,6 +42,12 @@ html
             else
               a(href='#' + val)
                 h2=val
+      ul.l-header-mobile__opened__share
+        include includes/sharelinks
+          each val in sns
+            li.l-header-mobile__opened__share__item
+              a(href=val.link)
+                i(class=`fab fa-${val.name}`)
 
     section.l-first-view#Top
       .l-first-view__inner
