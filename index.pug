@@ -33,14 +33,14 @@ html
       .l-header__inner
         nav.l-header__inner__siteNav
           ul.l-header__inner__siteNav__list
-            include includes/headerNavArray
+            include includes/_headerNavArray
             each val in navArray
               li.l-header__inner__siteNav__list__item
                 a(href='#' + val)
                   h2=val
                   .isActive
         ul.l-header__inner__shareLinks
-          include includes/sharelinks
+          include includes/_sharelinks
           each val in sns
             if val.name !== 'line'
               li.l-header__inner__shareLinks__item
@@ -53,7 +53,7 @@ html
     .l-header-mobile__opened#menuContents
       i.l-header-mobile__opened__close.fas.fa-times#close
       ul.l-header-mobile__opened__nav
-        include includes/headerNavArray
+        include includes/_headerNavArray
         each val in navArray
           li.l-header-mobile__opened__nav__item
             if val == 'Lab'
@@ -63,7 +63,7 @@ html
               a(href='#' + val)
                 h2=val
       ul.l-header-mobile__opened__share
-        include includes/sharelinks
+        include includes/_sharelinks
           each val in sns
             li.l-header-mobile__opened__share__item
               a(href=val.link)
@@ -89,21 +89,21 @@ html
             p I’m a Front-end Developer.
             p Let me introduce myself using…
         ul.l-about__btns
-          include includes/aboutBtns
+          include includes/_aboutBtns
           each item in btnItem
             li(id=item.name+'Btn' class=item.isActive ? 'btnActive' : '').l-about__btns__item
               img.l-about__btns__item__image(src=item.image_url)
               .l-about__btns__item__triangle
         .l-about__text-area
-          include includes/aboutProfileItem
-          include includes/aboutProfileTextList
+          include includes/_aboutProfileItem
+          include includes/_aboutProfileTextList
 
         ul.l-about__text-mobile
-          include includes/aboutProfileItem
+          include includes/_aboutProfileItem
           each item,key in profileItem
             li.l-about__text-mobile__item #{key} : #{item}
         ul.l-about__icons-mobile
-          include includes/aboutBtns
+          include includes/_aboutBtns
           each item in btnItem
             li(class=item.name).l-about__icons-mobile__item
               img.l-about__icons-mobile__item__image(src=item.image_url)
@@ -113,7 +113,7 @@ html
         h1.l-container__title My &gt; Works
         p.l-container__subText 今までの制作物一覧。最新順。
         ul.l-works__list
-          include includes/workItem
+          include includes/_workItem
           each item in worksList
             li.l-works__list__item
               if item.name
@@ -136,7 +136,7 @@ html
         .l-lab__treeArea
           .l-lab__treeArea__line
           .l-lab__treeArea__points
-            include includes/labItem
+            include includes/_labItem
             each item in labItem
               .l-lab__treeArea__points__item
                 if item.imageUrl
@@ -156,7 +156,7 @@ html
         .l-container__subText
           p 以下のSNSで活動中。Twitter出没率が高め。
         ul.l-contact__sns
-          include includes/contactItem
+          include includes/_contactItem
           each item in snsItem
             li.l-contact__sns__item
               a(href=item.linkUrl target='_blank')

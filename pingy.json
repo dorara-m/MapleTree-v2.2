@@ -1,7 +1,7 @@
 {
 	"name": "v2.2",
 	"exportDir": "dist",
-	"minify": true,
+	"minify": false,
 	"compile": true,
 	"exclusions": [
 		{
@@ -10,5 +10,5 @@
 			"type": "dir"
 		}
 	],
-	"port": 49415
+	"port": 62631
 }
